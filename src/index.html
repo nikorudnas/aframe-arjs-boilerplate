@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Pragma" content="no-cache" />
+  </head>
+  <script src="./vendor/aframe.min.js"></script>
+  <script src="./vendor/aframe-ar.min.js"></script>
+  <script src="./vendor/jquery.min.js"></script>
+  <script>
+    THREEx.ArToolkitContext.baseURL = './vendor/data/';
+  </script>
+
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene
+      embedded
+      arjs="trackingMethod: best; debugUIEnabled: false; detectionMode: mono_and_matrix;"
+    >
+      <a-marker
+        preset="custom"
+        type="pattern"
+        url="./patterns/shark-marker.patt"
+        registerevents
+        emitevents="true"
+        id="myMarker"
+      >
+        <a-box
+          position="0 0.1 0"
+          scale="1 1 1"
+          rotation="0 45 0"
+          color="#4CC3D9"
+        ></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
